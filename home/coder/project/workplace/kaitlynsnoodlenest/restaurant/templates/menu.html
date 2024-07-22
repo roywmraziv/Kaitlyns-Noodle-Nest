@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Menu</h1>
+<!--Begin col-->
+<div class="row">
+    <div class="column">
+        <h2> Entrees </h2>
+        {% for item in menu%}
+            {% if item.item_category == 'entree' %}
+                <p>
+                    <a href="{% url 'menu_item' pk=item.pk%}">
+                        {{ item.name}}
+                    </a>
+                    <span class="menu-price">
+                        ${{item.price}}
+                    </span>
+                    
+                </p>
+            {% endif %}
+        {%endfor%}
+    </div>
+    <div class="column">
+        <h2>Sides</h2>
+        {% for item in menu %}
+            {% if item.item_category == 'side' %}
+                <p>
+                    <a href="{% url 'menu_item' pk=item.pk %}">
+                        {{ item.name }}
+                    </a>
+                    <span class="menu-price">
+                        ${{ item.price }}
+                    </span>
+                </p>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="column">
+        <h2>Desserts</h2>
+        {% for item in menu %}
+            {% if item.item_category == 'dessert' %}
+                <p>
+                    <a href="{% url 'menu_item' pk=item.pk %}">
+                        {{ item.name }}
+                    </a>
+                    <span class="menu-price">
+                        ${{ item.price }}
+                    </span>
+                </p>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+    <!--End col-->
+{% endblock %}

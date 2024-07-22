@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section>
+  <article>
+    <h1>About Us</h1>
+    <!--Begin row-->
+    <div class="row">
+      <!--Begin col-->
+      <div class="column">
+        <p>
+          Based in Bolingbrook, Illinois, Kaitlyn's Noodle Nest is a family-owned 
+          restaurant. The restaurant serves to bring the taste of yummy
+          homemade noodles to the public. 
+        </p>
+        <p>
+          The inspiration for the restaurant comes from Kaitlyn's signature
+          Macaroni recipe with gooey cheese and the noodles cooked to perfection.
+        </p>
+
+        <p>
+          The restaurant has a home-like vibe and relaxed atmosphere with moderate
+          prices, making it a popular place for a meal any time of the day.
+        </p>
+
+        <p>
+          Kaitlyn's Noodle Nest is owned by Kaitlyn, the namesake, and her husband
+          Roy. It is Kaitlyn's recipes that make the restaurant special.
+        </p>
+
+        <p>
+          To craft the menu, Kaitlyn relies on her famous recipes and her experience
+          with preparing food for her children. She works to provide yummy food
+          with only the best ingredients that remain nutritious and healthy.
+        </p>
+
+        <p>
+          Roy does the marketing and management of the finances and website. He 
+          works to ensure everything behind the scenes runs smoothly so Kaitlyn
+          can focus on her passion to bring the best noodles straight to your table.
+        </p>
+      </div>
+      <!--End col-->
+
+      <!--Begin col-->
+      <div class="column">
+        <figure class="figure">
+          <img
+            src="{% static 'img/signaturemacaroniandcheese.png' %}"
+            alt="Kaitlyn's Signature Macaroni"
+          />
+          <figcaption class="figure-caption">
+            Kaitlyn's Signature Macaroni
+          </figcaption>
+        </figure>
+      </div>
+      <!--End col-->
+    </div>
+    <!--End row-->
+  </article>
+</section>
+{% endblock %}

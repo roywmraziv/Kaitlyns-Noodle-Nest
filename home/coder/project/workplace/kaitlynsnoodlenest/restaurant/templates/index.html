@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section>
+    <article id="hero">
+      <h1 class="heading_shadow">SPECIAL OFFER</h1>
+      <p>
+        30% Off This Weekend 
+      </p>
+      <a href="/book" class="cta"> Book now </a>
+    </article>
+  </section>
+  <section>
+    <article>
+      <h2>Our New Menu</h2>
+      <img src="{% static 'img/fettucinialfredo.png' %}">
+      <p>
+        Our menu consists of 12-15 mostly noodle- or pasta-based items.
+        The recipes come straight from Kaitlyn's home kitchen so you 
+        can be certain of the high-quality and great taste!
+      </p>
+      <p>
+        <a href="{% url 'menu' %}">See our new menu</a>
+      </p>
+    </article>
+    <article>
+      <h2>Book a table</h2>
+      <img src="{% static 'img/caesarsalad.png' %}">
+      <p>
+        Reserve your table for a mouth-watering dining experience. 
+        Experience the incredible taste first-hand today!
+      </p>
+      <p>
+        <a href="{% url 'book' %}">Book your table now</a>
+      </p>
+    </article>
+    <article>
+      <h2>Opening Hours</h2>
+      <img src="{% static 'img/chefcooking.png' %}">
+      <p>
+        Kaitlyn's Noodle Nest is open 7 days a week, except for public holidays. 
+      </p>
+      <ul>
+        <li>Mon - Fri: 2pm - 10pm</li>
+        <li>Sat: 2pm - 12pm</li>
+        <li>Sun: 2pm - 8pm</li>
+      </ul>
+    </article>
+  </section>
+{% endblock %}
