@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
                     'kaitlyns-noodle-nest-app-djnkv.ondigitalocean.app',
+                    '127.0.0.1',
                  ]
 
 

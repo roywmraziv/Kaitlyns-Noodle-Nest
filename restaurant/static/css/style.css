@@ -1,9 +1,7 @@
-body {
+html, body {
     font-family: 'Karla', sans-serif;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 
@@ -49,15 +47,15 @@ header img {
     flex: 0;  /* Allows the text to take the remaining space 
 } */
 
-header {
-    width: 100%;  /* Full width of the viewport */
-    height: 150px;  /* Fixed height */
-    background-color: rgba(222, 204, 165, 255);  /* Background color */
+/* header {
+    width: 100%;  
+    height: 10rem;  
+    background-color: rgba(222, 204, 165, 255);  
     display: flex;
     align-items: center;
-    justify-content: space-between;  /* Adjust spacing if needed */
-    padding: 0 20px;  /* Horizontal padding */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Optional shadow for depth */
+    justify-content: space-between;  
+    padding: 0 20px;  
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
 }
 .header-content {
     display: flex;
@@ -65,17 +63,97 @@ header {
 }
 
 .header-content img {
-    max-height: 100px;  /* Adjust image height */
-    margin-right: 25px;  /* Space between image and text */
+    max-height: 3rem; 
+    margin-right: 25px;  
     float: left;
 }
 
 .header-content h1 {
-    margin: 0;  /* Remove default margin */
-    font-size: 1.5em;  /* Adjust font size */
-    color: #333;  /* Text color */
+    margin: 0;  
+    font-size: 1.5em;  
+    color: #333;  
+} */
+header {
+    width: 100%;
+    height: 10rem;                       /* or auto, if you prefer fluid height */
+    background-color: rgba(222, 204, 165, 1);
+    display: flex;                       /* Use flex layout */
+    align-items: center;                 /* Vertically center items */
+    justify-content: flex-start;         /* Align items to the left */
+    margin: 0;                           /* Remove default body/header margin */
+    padding: 0 1rem 0 0;                 /* Only right padding, no left padding */
+    box-sizing: border-box;              /* So padding doesn't extend beyond 100% width */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;                    /* No hidden overflow if we want to avoid scroll */
+  }
+
+/* Make the .header-content also fill the header height */
+.header-content {
+    display: flex;
+    align-items: center;
+    height: 90%;
+
+    /* For narrower screens, let elements wrap/stack: */
+    flex-wrap: wrap; 
+    /* Alternatively, you can do a column layout at small breakpoints via media queries. */
 }
 
+.header-image {
+    max-height: 10rem;     /* Adjust to make the image smaller */
+    width: auto;          /* Keep aspect ratio */
+    margin: 0;            /* No margins so it's flush to the left */
+    display: block;       /* Avoid any inline spacing issues */
+    background-color: rgba(222, 204, 165, 1);
+  }
+  
+/* Main heading styles */
+.header-text {
+    margin: 0;
+    color: #333;
+    margin-left: 7rem;
+
+    /*
+        Use a fluid font size so text shrinks on smaller screens.
+        clamp(min, preferred, max):
+        - min: the smallest font size
+        - preferred: some fraction of viewport width
+        - max: the largest font size
+    */
+    font-size: 5rem; 
+    /* or try something simpler, like `font-size: 1.5rem;` plus media queries */
+}
+  /* 
+     If you want the text to stack under the image on extra-small screens,
+     you can force a column layout at a certain breakpoint:
+  */
+@media (max-width: 920px){
+    .header-text{
+        font-size: 2rem;
+        margin-left: 4rem;
+    }
+}
+@media (max-width: 600px) {
+    .header-content {
+        flex-direction: column;      /* stack vertically */
+        justify-content: center;     /* center each element */
+    }
+
+    .header-content img {
+        margin-right: 0;            /* remove side spacing in column layout */
+        margin-bottom: 0.5rem;      /* small vertical gap */
+        /* Optionally reduce the image size if 10rem is too tall for a small screen */
+        height: auto;       
+        max-height: 50%;     
+    }
+
+    .header-text {
+        /* Possibly reduce font-size further on small screens if needed: */
+        font-size: 3rem;
+        text-align: center;
+        margin-left: 2rem;
+    }
+}
+  
 
 .header-text h1 {
     margin: 0;  /* Removes default margin from the heading */
