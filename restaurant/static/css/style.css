@@ -316,7 +316,11 @@ footer p {
     width: 100%;
     padding-bottom: 1rem;
     justify-content: space-between;
-  }
+    margin-left: 3rem;
+}
+.menu-header{
+    margin-left: 3rem;
+}
 
   .column {
     flex-basis: 50%;
